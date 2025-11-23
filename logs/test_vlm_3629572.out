@@ -1,0 +1,76 @@
+---------------------------------------
+Begin Slurm Prolog: Nov-22-2025 23:23:23
+Job ID:    3629572
+User ID:   mzheng92
+Account:   ece
+Job name:  test_vlm
+Partition: ice-gpu
+QOS:       coc-ice
+---------------------------------------
+
+CondaError: Run 'conda init' before 'conda deactivate'
+
+/storage/ice1/shared/ece8803cai/czeng92/conda-envs/vlm-sched/lib/python3.10/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/storage/ice1/shared/ece8803cai/czeng92/conda-envs/vlm-sched/lib/python3.10/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Loading model: Qwen/Qwen2.5-7B-Instruct
+INFO 11-22 23:26:29 [utils.py:253] non-default args: {'disable_log_stats': True, 'model': 'Qwen/Qwen2.5-7B-Instruct'}
+INFO 11-22 23:26:53 [model.py:631] Resolved architecture: Qwen2ForCausalLM
+INFO 11-22 23:26:53 [model.py:1745] Using max model len 32768
+INFO 11-22 23:27:01 [scheduler.py:216] Chunked prefill is enabled with max_num_batched_tokens=16384.
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:27:03 [core.py:93] Initializing a V1 LLM engine (v0.11.2) with config: model='Qwen/Qwen2.5-7B-Instruct', speculative_config=None, tokenizer='Qwen/Qwen2.5-7B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=Qwen/Qwen2.5-7B-Instruct, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer'], 'compile_mm_encoder': False, 'use_inductor': None, 'compile_sizes': [], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {}, 'max_cudagraph_capture_size': 512, 'local_cache_dir': None}
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:27:18 [parallel_state.py:1208] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.27.150.92:47861 backend=nccl
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:27:18 [parallel_state.py:1394] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:27:20 [gpu_model_runner.py:3259] Starting to load model Qwen/Qwen2.5-7B-Instruct...
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:27:26 [cuda.py:418] Valid backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION']
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:27:26 [cuda.py:427] Using FLASH_ATTN backend.
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:28:10 [weight_utils.py:441] Time spent downloading weights for Qwen/Qwen2.5-7B-Instruct: 44.030744 seconds
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:05,  1.89s/it]
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:03<00:03,  1.70s/it]
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:05<00:01,  1.71s/it]
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:06<00:00,  1.71s/it]
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:06<00:00,  1.72s/it]
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m 
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:28:17 [default_loader.py:314] Loading weights took 7.00 seconds
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:28:18 [gpu_model_runner.py:3338] Model loading took 14.2488 GiB memory and 57.366704 seconds
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:28:44 [backends.py:631] Using cache directory: /home/hice1/mzheng92/.cache/vllm/torch_compile_cache/8cc30d06f8/rank_0_0/backbone for vLLM's torch.compile
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:28:44 [backends.py:647] Dynamo bytecode transform time: 25.70 s
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m [rank0]:W1122 23:28:49.169000 1268016 site-packages/torch/_inductor/codegen/triton_combo_kernel.py:110] [0/0] ComboKernels: 1 large pointwise nodes are separated
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m [rank0]:W1122 23:28:49.894000 1268016 site-packages/torch/_inductor/codegen/triton_combo_kernel.py:110] [0/0] ComboKernels: 1 large pointwise nodes are separated
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:28:50 [backends.py:251] Cache the graph for dynamic shape for later use
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m [rank0]:W1122 23:28:51.571000 1268016 site-packages/torch/_inductor/codegen/triton_combo_kernel.py:110] [0/0] ComboKernels: 1 large pointwise nodes are separated
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m [rank0]:W1122 23:28:51.705000 1268016 site-packages/torch/_inductor/codegen/triton_combo_kernel.py:110] [0/0] ComboKernels: 1 large pointwise nodes are separated
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:28:56 [backends.py:282] Compiling a graph for dynamic shape takes 11.63 s
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:29:00 [monitor.py:34] torch.compile takes 37.33 s in total
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:29:04 [gpu_worker.py:359] Available KV cache memory: 51.21 GiB
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:29:04 [kv_cache_utils.py:1229] GPU KV cache size: 958,912 tokens
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:29:04 [kv_cache_utils.py:1234] Maximum concurrency for 32,768 tokens per request: 29.26x
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   4%|▍         | 2/51 [00:00<00:03, 15.35it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  10%|▉         | 5/51 [00:00<00:02, 21.97it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  16%|█▌        | 8/51 [00:00<00:04, 10.35it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  22%|██▏       | 11/51 [00:00<00:02, 14.13it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  27%|██▋       | 14/51 [00:00<00:02, 17.06it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  33%|███▎      | 17/51 [00:01<00:01, 19.17it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 21/51 [00:01<00:01, 22.37it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:01<00:01, 23.37it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  53%|█████▎    | 27/51 [00:01<00:00, 24.39it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 30/51 [00:01<00:00, 24.92it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 33/51 [00:01<00:00, 25.04it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:01<00:00, 25.65it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▋  | 39/51 [00:01<00:00, 25.16it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 42/51 [00:01<00:00, 25.69it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 45/51 [00:02<00:00, 26.16it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:02<00:00, 26.73it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 13.73it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 19.29it/s]
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):   2%|▏         | 1/51 [00:00<00:40,  1.22it/s]Capturing CUDA graphs (decode, FULL):  10%|▉         | 5/51 [00:00<00:06,  6.96it/s]Capturing CUDA graphs (decode, FULL):  20%|█▉        | 10/51 [00:01<00:02, 14.08it/s]Capturing CUDA graphs (decode, FULL):  29%|██▉       | 15/51 [00:01<00:01, 20.73it/s]Capturing CUDA graphs (decode, FULL):  39%|███▉      | 20/51 [00:01<00:01, 26.57it/s]Capturing CUDA graphs (decode, FULL):  49%|████▉     | 25/51 [00:01<00:00, 31.56it/s]Capturing CUDA graphs (decode, FULL):  59%|█████▉    | 30/51 [00:01<00:00, 35.67it/s]Capturing CUDA graphs (decode, FULL):  69%|██████▊   | 35/51 [00:01<00:00, 38.58it/s]Capturing CUDA graphs (decode, FULL):  78%|███████▊  | 40/51 [00:01<00:00, 40.85it/s]Capturing CUDA graphs (decode, FULL):  88%|████████▊ | 45/51 [00:01<00:00, 42.84it/s]Capturing CUDA graphs (decode, FULL):  98%|█████████▊| 50/51 [00:01<00:00, 44.52it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:01<00:00, 26.75it/s]
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:29:10 [gpu_model_runner.py:4244] Graph capturing finished in 5 secs, took 0.93 GiB
+[1;36m(EngineCore_DP0 pid=1268016)[0;0m INFO 11-22 23:29:10 [core.py:250] init engine (profile, create kv cache, warmup model) took 52.04 seconds
+INFO 11-22 23:29:11 [llm.py:352] Supported tasks: ['generate']
+Adding requests:   0%|          | 0/1 [00:00<?, ?it/s]Adding requests: 100%|██████████| 1/1 [00:00<00:00,  6.27it/s]Adding requests: 100%|██████████| 1/1 [00:00<00:00,  6.26it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  4.86it/s, est. speed input: 102.03 toks/s, output: 97.17 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  4.86it/s, est. speed input: 102.03 toks/s, output: 97.17 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  4.85it/s, est. speed input: 102.03 toks/s, output: 97.17 toks/s]
+Output: Hello from a Georgia Tech PACE-ICE GPU node! 🚀CUDA 🐍
+Latency (s): 0.3676576614379883
+---------------------------------------
+Begin Slurm Epilog: Nov-22-2025 23:29:15
+Job ID:        3629572
+User ID:       mzheng92
+Account:       ece
+Job name:      test_vlm
+Resources:     cpu=1,gres/gpu:h100=1,mem=64G,node=1
+Rsrc Used:     cput=00:05:52,vmem=0,walltime=00:05:52,mem=18938764K,energy_used=0
+Partition:     ice-gpu
+QOS:           coc-ice
+Nodes:         atl1-1-03-013-3-0
+---------------------------------------

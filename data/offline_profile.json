@@ -1,0 +1,57 @@
+[
+  {
+    "type": "prefill",
+    "input_tokens": 16,
+    "latency": 0.06644964218139648
+  },
+  {
+    "type": "prefill",
+    "input_tokens": 32,
+    "latency": 0.06271958351135254
+  },
+  {
+    "type": "prefill",
+    "input_tokens": 64,
+    "latency": 0.06465935707092285
+  },
+  {
+    "type": "prefill",
+    "input_tokens": 128,
+    "latency": 0.08328366279602051
+  },
+  {
+    "type": "prefill",
+    "input_tokens": 256,
+    "latency": 0.09444808959960938
+  },
+  {
+    "type": "prefill",
+    "input_tokens": 512,
+    "latency": 0.11716461181640625
+  },
+  {
+    "type": "prefill",
+    "input_tokens": 1024,
+    "latency": 0.1786816120147705
+  },
+  {
+    "type": "decode",
+    "output_tokens": 8,
+    "latency": 0.06121706962585449
+  },
+  {
+    "type": "decode",
+    "output_tokens": 16,
+    "latency": 0.11814165115356445
+  },
+  {
+    "type": "decode",
+    "output_tokens": 32,
+    "latency": 0.23442292213439941
+  },
+  {
+    "type": "decode",
+    "output_tokens": 64,
+    "latency": 0.4622354507446289
+  }
+]
