@@ -1,0 +1,70 @@
+---------------------------------------
+Begin Slurm Prolog: Nov-23-2025 16:59:46
+Job ID:    3637815
+User ID:   mzheng92
+Account:   ece
+Job name:  vlm_sweep
+Partition: ice-gpu
+QOS:       coc-ice
+---------------------------------------
+
+CondaError: Run 'conda init' before 'conda deactivate'
+
+Start time: Sun Nov 23 16:59:50 EST 2025
+/storage/ice1/shared/ece8803cai/czeng92/vlm_scheduler/src/run_trace_load_sweep.py:3: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+[INFO] time_scale = 0.5
+  [INFO] policy = fifo
+  [INFO] policy = two_stage
+  [INFO] policy = two_stage_no_batch
+  [INFO] policy = two_stage_no_prefill
+[INFO] time_scale = 0.8
+  [INFO] policy = fifo
+  [INFO] policy = two_stage
+  [INFO] policy = two_stage_no_batch
+  [INFO] policy = two_stage_no_prefill
+[INFO] time_scale = 1.0
+  [INFO] policy = fifo
+  [INFO] policy = two_stage
+  [INFO] policy = two_stage_no_batch
+  [INFO] policy = two_stage_no_prefill
+[INFO] time_scale = 1.2
+  [INFO] policy = fifo
+  [INFO] policy = two_stage
+  [INFO] policy = two_stage_no_batch
+  [INFO] policy = two_stage_no_prefill
+[INFO] time_scale = 1.5
+  [INFO] policy = fifo
+  [INFO] policy = two_stage
+  [INFO] policy = two_stage_no_batch
+  [INFO] policy = two_stage_no_prefill
+[INFO] time_scale = 2.0
+  [INFO] policy = fifo
+  [INFO] policy = two_stage
+  [INFO] policy = two_stage_no_batch
+  [INFO] policy = two_stage_no_prefill
+[INFO] time_scale = 3.0
+  [INFO] policy = fifo
+  [INFO] policy = two_stage
+  [INFO] policy = two_stage_no_batch
+  [INFO] policy = two_stage_no_prefill
+[INFO] Saved sweep results to logs/trace/load_sweep.csv
+End time: Sun Nov 23 17:00:27 EST 2025
+---------------------------------------
+Begin Slurm Epilog: Nov-23-2025 17:00:27
+Job ID:        3637815
+User ID:       mzheng92
+Account:       ece
+Job name:      vlm_sweep
+Resources:     cpu=1,gres/gpu:h100=1,mem=64G,node=1
+Rsrc Used:     cput=00:00:41,vmem=0,walltime=00:00:41,mem=68604K,energy_used=0
+Partition:     ice-gpu
+QOS:           coc-ice
+Nodes:         atl1-1-03-013-3-0
+---------------------------------------
